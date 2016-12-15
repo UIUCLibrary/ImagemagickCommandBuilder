@@ -2,12 +2,12 @@ import os
 import ImagemagickDriver
 from ImagemagickDriver.commandBuilders import DefaultCommandBuilder
 from ImagemagickDriver.commandBuilders.abs_builder import AbsBuilder
-
+from ImagemagickDriver.config import get_imagemagick_path
 
 class Director:
     """Use this to generate commands for sending to imagemagick"""
 
-    def __init__(self, builder: AbsBuilder = DefaultCommandBuilder(), program_path=ImagemagickDriver.IMAGEMAGICK):
+    def __init__(self, builder: AbsBuilder = DefaultCommandBuilder(), program_path=get_imagemagick_path()):
         """
         Configure how the director should configure the builders. All args are for overriding the defaults.
 
